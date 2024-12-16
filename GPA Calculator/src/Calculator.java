@@ -1,9 +1,11 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Calculator
 {
 
     HashMap<String, Integer> letterGrade = new HashMap<String, Integer>();
+    Scanner keyboard = new Scanner(System.in);
 
     public Calculator()
     {
@@ -14,38 +16,59 @@ public class Calculator
         letterGrade.put("f", 0);
     }
 
-    public double AverageNums(
-            int first,
-            int second,
-            int third,
-            int fourth,
-            int fifth,
-            int sixth,
-            int seventh)
+    public double averageNums()
     {
-        double gpa = (first + second + third + fourth + fifth + sixth + seventh) / 7.0;
+        System.out.println("===============numerical input===============");
+        System.out.println("4 = a");
+        System.out.println("3 = b");
+        System.out.println("2 = c");
+        System.out.println("1 = d");
+        System.out.println("0 = f");
+        System.out.println("enter your grades separated by commas and no spaces");
+
+        String input = keyboard.next();
+
+        String[] grades = input.split(",");
+
+//            int sum = 0;
+//            for(String grade : grades) {
+//                sum += Integer.parseInt(grade);
+//            }
+
+        double sum = 0;
+
+        for (int i = 0; i < grades.length; i++)
+        {
+            sum += Integer.parseInt(grades[i]);
+        }
+
+        double gpa = sum / grades.length;
 
         return gpa;
     }
 
-    public double AverageLetters(
-            String first,
-            String second,
-            String third,
-            String fourth,
-            String fifth,
-            String sixth,
-            String seventh)
+    public double averageLetters()
     {
-        int firstNum = letterGrade.get("first");
-        int secondNum = letterGrade.get("second");
-        int thirdNum = letterGrade.get("third");
-        int fourthNum = letterGrade.get("fourth");
-        int fifthNum = letterGrade.get("fifth");
-        int sixthNum = letterGrade.get("sixth");
-        int seventhNum = letterGrade.get("seventh");
+        System.out.println("===============numerical input===============");
+        System.out.println("enter your grades separated by commas and no spaces");
 
-        double gpa = (firstNum + secondNum + thirdNum + fourthNum + fifthNum + sixthNum + seventhNum) / 7.0;
+        String input = keyboard.next();
+
+        String[] grades = input.split(",");
+
+//            int sum = 0;
+//            for(String grade : grades) {
+//                sum += Integer.parseInt(grade);
+//            }
+
+        double sum = 0;
+
+        for (int i = 0; i < grades.length; i++)
+        {
+            sum += Integer.parseInt(String.valueOf(letterGrade.get(grades[i])));
+        }
+
+        double gpa = sum / grades.length;
 
         return gpa;
     }
