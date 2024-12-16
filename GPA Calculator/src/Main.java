@@ -15,10 +15,6 @@ public class Main {
             System.out.println("numerical or letter ");
 
             String choice = keyboard.next();
-//
-//        System.out.println("input number of classes");
-//
-//        int classes = keyboard.nextInt();
 
             if (choice.equals("numerical")) {
                 System.out.println("===============numerical input===============");
