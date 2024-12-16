@@ -21,17 +21,33 @@ public class Main {
 //        int classes = keyboard.nextInt();
 
             if (choice.equals("numerical")) {
-                double gpa = calculator.averageNums();
+                System.out.println("===============numerical input===============");
+                System.out.println("4 = a");
+                System.out.println("3 = b");
+                System.out.println("2 = c");
+                System.out.println("1 = d");
+                System.out.println("0 = f");
+                System.out.println("enter your grades separated by commas and no spaces");
+
+                String input = keyboard.next();
+
+                double gpa = calculator.averageNums(input);
 
                 System.out.println("Your GPA is " + gpa);
 
             } else if (choice.equals("letter")) {
-                double gpa = calculator.averageLetters();
+                System.out.println("===============numerical input===============");
+                System.out.println("enter your grades separated by commas and no spaces");
+
+                String input = keyboard.next();
+
+                double gpa = calculator.averageLetters(input);
 
                 System.out.println("Your GPA is " + gpa);
 
             } else if (choice.equals("stop")) {
                 mainLoop = false;
+
             } else {
                 System.out.println("Error, input a valid input method");
 
