@@ -7,11 +7,12 @@ public class Main {
 
         Scanner keyboard = new Scanner(System.in);
         Calculator calculator = new Calculator();
+        boolean mainLoop = true;
 
-        while (true) {
+        while (mainLoop) {
             System.out.println("===============GPA Calculator===============");
-            System.out.println("type your desired grade input");
-            System.out.println("numerical or letter");
+            System.out.println("type your desired grade input or stop to end program");
+            System.out.println("numerical or letter ");
 
             String choice = keyboard.next();
 //
@@ -29,6 +30,8 @@ public class Main {
 
                 System.out.println("Your GPA is " + gpa);
 
+            } else if (choice.equals("stop")) {
+                mainLoop = false;
             } else {
                 System.out.println("Error, input a valid input method");
 
